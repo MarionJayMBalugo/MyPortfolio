@@ -2,15 +2,14 @@
   <v-app id="base" > 
   
     <headerComp></headerComp> 
-    <v-content>
+    <v-main >
       <v-layout row >
         <v-flex >  
           <router-view></router-view>
         </v-flex>
       </v-layout>   
-    </v-content>
-    
-    <div class="details">
+    </v-main>
+    <div class="details" id="footer">
       <v-footer
         dark
         padless
@@ -49,5 +48,9 @@ export default {
   .details{
   margin-right:20% !important;
   margin-left:18.5% !important;
+}
+#footer{
+  position: fixed;
+  bottom: 0;
 }
 </style>

@@ -99,6 +99,7 @@ export default {
 <style scoped>
 
   .home{
+
     background-image:url("~@/assets/backgroundImage.png");
     background-repeat: no-repeat;
     background-size: 70% 500px;

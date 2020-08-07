@@ -1,6 +1,6 @@
 <template>
   
-     <div class="header" style="background-color:grey;">
+     <div class="header" >
          <v-container fluid>
              <v-row>
              <v-flex  id="name" md-4>
