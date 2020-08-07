@@ -9,10 +9,10 @@
         </v-flex>
       </v-layout>   
     </v-main>
-    <div class="details" id="footer">
       <v-footer
         dark
         padless
+        id="footer"
       >
             <v-card
               flat
@@ -30,7 +30,7 @@
               </v-card-text>
             </v-card>
       </v-footer>
-    </div>
+ 
   </v-app>
 </template>
 
@@ -47,9 +47,12 @@ export default {
 <style >
   .details{
   margin-right:20% !important;
-  margin-left:18.5% !important;
+  margin-left:20% !important;
+  padding-bottom:100px;
 }
 #footer{
+    margin-right:19.5% !important;
+  margin-left:19.5% !important;
   position: fixed;
   bottom: 0;
 }

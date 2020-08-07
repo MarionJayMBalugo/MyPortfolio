@@ -8,8 +8,8 @@
       <v-btn color="#939366" class="mr-5">hire me</v-btn>
       <v-btn outlined color="#939366">projects</v-btn>
     </div>
-    <div class="details">
-      <v-content class="expQuickView">
+    <v-card class="details pl-2 pr-2">
+      <v-container class="expQuickView">
         <v-row>
           <v-flex md-3>
             <div style="display:flex">
@@ -53,9 +53,9 @@
             </div>
           </v-flex>
         </v-row>
-      </v-content>
+      </v-container>
       <hr>
-      <v-content id="about" >
+      <v-container id="about" >
         <v-layout row>
           <v-flex md-6 id="dev">
             <img src="~@/assets/developer.jpg" alt="">
@@ -87,8 +87,8 @@
             </v-container>   
           </v-flex>     
         </v-layout>
-      </v-content>
-    </div>
+      </v-container>
+    </v-card>
   </v-app>
 </template>
 <script>
@@ -116,7 +116,7 @@ export default {
 }
 #slogan{
   margin-top:12%;
-  margin-left:19%;
+  margin-left:20%;
   position:absolute;
 }
 .details{

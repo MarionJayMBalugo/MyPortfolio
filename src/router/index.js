@@ -13,7 +13,12 @@ export default new VueRouter({
             path: '/skills',
             name: 'skills',
             component: Skills
-        }
+        },
+        {
+            path: '*',
+            name: 'home',
+            component: Home
+        },
 
     ]
 })
