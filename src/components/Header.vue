@@ -1,25 +1,18 @@
 <template>
   
-     <div class="header">
+     <div class="header" style="background-color:grey;">
          <v-container fluid>
              <v-row>
              <v-flex  id="name" md-4>
                  <h1>marion</h1>
              </v-flex>
              <v-flex md-8>
-                  <router-link to="/contact">CONTACT</router-link>
-                    <router-link to="/blog">BLOG</router-link>
-                    <router-link to="/projects">PROJECTS</router-link>
-                    <router-link to="/services">SERVICES</router-link>
-                    <router-link to="/skills">SKILLS</router-link>
-                    <router-link to="/about">ABOUT</router-link>
-                    <router-link to="/home" class="active">HOME</router-link>
+                <router-link v-ripple  to="/contact">CONTACT</router-link>
+                <router-link v-ripple to="/skills">SKILLS</router-link>
+                <router-link v-ripple to="/home" class="active">HOME</router-link>
              </v-flex>
          </v-row>
          </v-container>
-         
-       
-
       </div>
 </template>
 

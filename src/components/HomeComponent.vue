@@ -6,7 +6,7 @@
       <h1>Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.</h1>
       <br>
       <v-btn color="#939366" class="mr-5">hire me</v-btn>
-      <v-btn outlined color="#939366">download cv</v-btn>
+      <v-btn outlined color="#939366">projects</v-btn>
     </div>
     <div class="details">
       <v-content class="expQuickView">
@@ -54,54 +54,56 @@
           </v-flex>
         </v-row>
       </v-content>
+      <hr>
       <v-content id="about" >
-        <v-row>
-          <v-flex md-5>
+        <v-layout row>
+          <v-flex md-6 id="dev">
             <img src="~@/assets/developer.jpg" alt="">
           </v-flex>
-          <v-flex md-7>
-            <v-content class="pt-10">
+          <v-flex md-6>
+            <v-container class="pt-10">
               <p>My Intro</p>
               <h1>About Me</h1>
               <br>
-              <span>Hi I'm Marion Jay Balugo.I am a web developer.I graduated from an online classroom.dfd
-                <br>Hi I'm Marion Jay Balugo.I am a web developer.I graduated from an online classroom.dfd
-              <br>At the age of 4 I was able to develop my first app.</span>
+              <span>Hi I'm Marion Jay Balugo.I am a web developer.I am a proud graduate of The
+                <br>University of San Carlos and a scholar of the Passerelles Numeriques
+                <br>a very known foundation that produces world-class IT professionals.</span>
               <div id="aboutDetails">
-                <span id="infoName"  style="color:#939366;">Name:</span>
-                <br><span class="ml-4">Marion Jay M. Balugo</span><br>
-                <span id="infoName"  style="color:#939366;">Date of Birth:</span>
-                <br><span class="ml-4">August 13, 2000</span><br>
-                <span id="infoName"  style="color:#939366;">Address:</span>
-                <br><span class="ml-4">Nasipit Road, Talamban, Cebu City</span><br>
-                <span id="infoName"  style="color:#939366;">Zip Code:</span>
-                <br><span class="ml-4">6000</span><br>
-              </div>
-              
-            </v-content>   
+                <v-row>
+                  <v-col md-6>
+                      <span id="infoName"  style="color:#939366;">Name:</span>
+                      <br><span class="ml-4">Marion Jay M. Balugo</span><br>
+                      <span id="infoName"  style="color:#939366;">Date of Birth:</span>
+                      <br><span class="ml-4">August 13, 2000</span><br>
+                  </v-col>
+                  <v-col md-6>
+                      <span id="infoName"  style="color:#939366;">Address:</span>
+                      <br><span class="ml-4">Nasipit Road, Talamban, Cebu City</span><br>
+                      <span id="infoName"  style="color:#939366;">Zip Code:</span>
+                      <br><span class="ml-4">6000</span><br>
+                  </v-col>
+                </v-row>                          
+              </div>          
+            </v-container>   
           </v-flex>     
-        </v-row>
-        
+        </v-layout>
       </v-content>
     </div>
   </v-app>
 </template>
-
 <script>
 export default {
-  name: 'home',
-  
+  name: 'home'
 }
 </script>
-
 <style scoped>
 
   .home{
-    background-image:url("~@/assets/computer.jpg");
-    height: 500px;
+    background-image:url("~@/assets/backgroundImage.png");
     background-repeat: no-repeat;
-    background-size: 70% ;
+    background-size: 70% 500px;
     background-position: top right;
+   
   }
   .triangle{
   margin-left: 30%;
@@ -134,7 +136,6 @@ h1{
   margin-top: 50px;
 }
  #imgDiv{
-  background-color: red;
   height: 50px;
   width:50px;
  border: 2px solid #939366;
@@ -150,9 +151,7 @@ h1{
   color:grey;
   font-size: 13px;
 }
-#about{
-  margin-top: 40px;
-}
+
 #about p{
   color:#939366;
   font-weight: bold;
@@ -165,5 +164,12 @@ h1{
 }
 #infoName{
   font-weight: bold;
+}
+#dev{
+  margin-top:50px;
+}
+hr{
+  margin-top:30px;
+  color:grey;
 }
 </style>

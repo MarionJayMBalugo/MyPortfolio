@@ -1,11 +1,19 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Dashboard from '@/components/HelloWorld';
-import Home from '@/components/HomeComponent'
+import Home from '@/components/HomeComponent';
+import Skills from '@/components/SkillComponent';
 Vue.use(VueRouter);
 export default new VueRouter({
-    routes:[
-        {path:'/dashboard', name:'dashboard',component:Dashboard},
-        {path:'/home', name:'home', component: Home}
+    routes: [{
+            path: '/home',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/skills',
+            name: 'skills',
+            component: Skills
+        }
+
     ]
 })
