@@ -74,14 +74,14 @@ export default {
        width:100%;
        height:100%;
        transition: all .3s ease-in-out; 
-     
+        position: relative;
    }
    #imgHolder{
        height:150px;
    }
    #mediaPlatforms img:hover{
        transform:scale(1.8,1.8);
-  
+        z-index: 100;
    }
    p{
        color:grey;
