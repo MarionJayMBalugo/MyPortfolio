@@ -1,14 +1,7 @@
 <template>
   <v-app id="base" > 
-  
-    <headerComp></headerComp> 
-    <v-main >
-      <v-layout row >
-        <v-flex >  
-          <router-view></router-view>
-        </v-flex>
-      </v-layout>   
-    </v-main>
+    <headerComp></headerComp>  
+    <router-view></router-view>      
       <v-footer
         dark
         padless
@@ -44,16 +37,18 @@ export default {
 }
 </script>
 
-<style >
+<style>
+
   .details{
+
   margin-right:20% !important;
   margin-left:20% !important;
   padding-bottom:100px;
 }
 #footer{
     margin-right:19.5% !important;
-  margin-left:19.5% !important;
-  position: fixed;
-  bottom: 0;
+    margin-left:19.5% !important;
+    /* position: fixed;
+    bottom: 0; */
 }
 </style>

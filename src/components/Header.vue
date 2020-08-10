@@ -6,7 +6,7 @@
              <v-flex  id="name" md-4>
                  <h1>marion</h1>
              </v-flex>
-             <v-flex md-8>
+             <v-flex lg-8>
                 <router-link v-ripple  to="/contact">CONTACT</router-link>
                 <router-link v-ripple to="/skills">SKILLS</router-link>
                 <router-link v-ripple to="/home" class="active">HOME</router-link>

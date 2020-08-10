@@ -1,5 +1,6 @@
 <template>
-  <v-app class="home">
+<v-main style="width:100%;" >
+  <div class="home">
     <div class="triangle"></div>
     <div id="slogan">
       <p>DESIGNS AND CREATE BRANDS</p>
@@ -8,10 +9,11 @@
       <v-btn color="#939366" class="mr-5">hire me</v-btn>
       <v-btn outlined color="#939366">projects</v-btn>
     </div>
+  </div>
     <v-card class="details pl-2 pr-2">
       <v-container class="expQuickView">
         <v-row>
-          <v-flex md-3>
+          <v-flex lg-3>
             <div style="display:flex">
               <div  id="imgDiv">
                 <img src="~@/assets/icons/projectIcon.png"  alt="projects"> 
@@ -21,7 +23,7 @@
               </div>
             </div>       
           </v-flex>
-          <v-flex md-3>
+          <v-flex lg-3>
             <div style="display:flex">
               <div id="imgDiv">
                 <img src="~@/assets/icons/clientIcon.png" alt="clients">
@@ -32,7 +34,7 @@
             </div>
            
           </v-flex>
-          <v-flex md-3>
+          <v-flex lg-3>
             <div style="display:flex">
               <div id="imgDiv">
                 <img src="~@/assets/icons/coffeeIcon.png" alt="coffee">
@@ -42,7 +44,7 @@
               </div>
             </div>
           </v-flex>
-          <v-flex md-3>
+          <v-flex lg-3>
             <div style="display:flex">
                <div id="imgDiv">
                     <img src="~@/assets/icons/calendarIcon.png" alt="calendar">
@@ -57,10 +59,10 @@
       <hr>
       <v-container id="about" >
         <v-layout row>
-          <v-flex md-6 id="dev">
+          <v-flex lg-6 id="dev">
             <img src="~@/assets/developer.jpg" alt="">
           </v-flex>
-          <v-flex md-6>
+          <v-flex lg-6>
             <v-container class="pt-10">
               <p>My Intro</p>
               <h1>About Me</h1>
@@ -70,13 +72,13 @@
                 <br>a very known foundation that produces world-class IT professionals.</span>
               <div id="aboutDetails">
                 <v-row>
-                  <v-col md-6>
+                  <v-col lg-6>
                       <span id="infoName"  style="color:#939366;">Name:</span>
                       <br><span class="ml-4">Marion Jay M. Balugo</span><br>
                       <span id="infoName"  style="color:#939366;">Date of Birth:</span>
                       <br><span class="ml-4">August 13, 2000</span><br>
                   </v-col>
-                  <v-col md-6>
+                  <v-col lg-6>
                       <span id="infoName"  style="color:#939366;">Address:</span>
                       <br><span class="ml-4">Nasipit Road, Talamban, Cebu City</span><br>
                       <span id="infoName"  style="color:#939366;">Zip Code:</span>
@@ -89,7 +91,7 @@
         </v-layout>
       </v-container>
     </v-card>
-  </v-app>
+</v-main>
 </template>
 <script>
 export default {
@@ -99,7 +101,6 @@ export default {
 <style scoped>
 
   .home{
-
     background-image:url("~@/assets/backgroundImage.png");
     background-repeat: no-repeat;
     background-size: 70% 500px;
@@ -115,8 +116,8 @@ export default {
 	border-bottom: 500px solid transparent;
 }
 #slogan{
-  margin-top:12%;
-  margin-left:20%;
+  margin-top:-30%;
+  margin-left: 20%;
   position:absolute;
 }
 .details{
@@ -125,14 +126,14 @@ export default {
 }
 .expQuickView p{
   color:#939366;
-  /* text-shadow: 1px 1px white; */
+  text-shadow: 1px 1px white; 
   font-weight: bold;
 }
 h1{
   font-weight: bolder;
   /* text-shadow: 1px 1px white; */
 
-}
+ }
 .expQuickView{
   margin-top: 50px;
 }
@@ -172,5 +173,5 @@ h1{
 hr{
   margin-top:30px;
   color:grey;
-}
+}  
 </style>
