@@ -10,7 +10,9 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.4.0",
+    "vue-typer": "^1.2.0",
     "vuetify": "^2.3.7"
   },
   "devDependencies": {
