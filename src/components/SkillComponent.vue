@@ -26,12 +26,11 @@
                             <v-col id="projectCol" class="ma-2" v-for="colNum in projectList.length/2" :key="colNum" md-2>
                                
                                     <v-row>
-                                        <img v-scrollanimation  :src="getImagePath(projectList[(colNum-1)+(rowNum-1)*3].name)" :alt="projectList[(colNum-1)+(rowNum-1)*3].alt">
+                                        <!-- <img v-scrollanimation  :src="getImagePath(projectList[(colNum-1)+(rowNum-1)*3].name)" :alt="projectList[(colNum-1)+(rowNum-1)*3].alt"> -->
                                     </v-row>
                                     <v-row>
                                         <div id="projectDescription">
-                                             <read-more  v-scrollanimation more-str="read more" :text="projectList[(colNum-1)+(rowNum-1)*3].description" link="#" less-str="read less" :max-chars="10"></read-more>
-                                         
+                                             <read-more  v-scrollanimation more-str="read more" :text="projectList[(colNum-1)+(rowNum-1)*3].description" link="#" less-str="read less" :max-chars="20"></read-more>                                      
                                         </div>
                                     </v-row>
                                

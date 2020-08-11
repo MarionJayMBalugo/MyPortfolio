@@ -158,9 +158,10 @@ export default {
 	border-bottom: 500px solid transparent;
 }
 #slogan{
-  margin-top:-25%;
+  margin-top:-20%;
   margin-left: 20%;
   position:absolute;
+  z-index: 1;
 }
 .details{
   margin-right:20% !important;
