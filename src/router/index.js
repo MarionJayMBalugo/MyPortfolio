@@ -30,6 +30,10 @@ export default new VueRouter({
             name: 'contact',
             component: Contact
         },
-
+        {
+            path: '/projects',
+            name: 'projects',
+            component: Skills
+        },
     ]
 })

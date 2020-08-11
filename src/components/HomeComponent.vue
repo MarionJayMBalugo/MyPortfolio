@@ -20,8 +20,9 @@
             ></vue-typer>
         </p>
       <br>
-      <v-btn id="link" color="#939366" class="mr-5" v-scrollanimation>hire me</v-btn>
-      <v-btn id="link" outlined color="#939366" v-scrollanimation>projects</v-btn>
+      <v-btn id="link" color="#939366" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
+      <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn>
+     
     </div>
   </div>
     <v-card class="details pl-2 pr-2">

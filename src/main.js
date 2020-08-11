@@ -5,10 +5,13 @@ import "vuetify/dist/vuetify.min.css";
 import router from "./router";
 import VueTyperPlugin from 'vue-typer';
 import ScrollAnimation from './scrollAnimation';
+import ReadMore from 'vue-read-more';
 
 Vue.directive('scrollanimation',ScrollAnimation);
 Vue.use(VueTyperPlugin);
 Vue.use(Vuetify);
+Vue.use(ReadMore);
+
 Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
