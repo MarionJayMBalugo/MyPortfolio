@@ -161,7 +161,7 @@ export default {
   margin-top:-20%;
   margin-left: 20%;
   position:absolute;
-  z-index: 1;
+  
 }
 .details{
   margin-right:20% !important;

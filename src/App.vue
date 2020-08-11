@@ -28,6 +28,7 @@ export default {
   margin-left:20% !important;
   padding-bottom:100px;
 }
+
 #footer{
     margin-right:19.5% !important;
     margin-left:19.5% !important;

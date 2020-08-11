@@ -1,28 +1,31 @@
 <template>
-  
-     <div class="header" >
-         <v-container fluid>
-             <v-row >
-             <v-flex  id="name" md-4 >
-                 <img src="~@/assets/marionLogo.jpg" alt="marion logo" v-scrollanimation>
-             </v-flex>
-             <v-flex lg-8 class="mr-5">
-                <router-link id="link" v-scrollanimation  v-ripple  to="/contact" @mouseover.native="hover = false"  @mouseleave.native="hover = true">CONTACT</router-link>
-                <router-link id="link" v-scrollanimation v-ripple to="/skills" @mouseover.native="hover = false" @mouseleave.native="hover = true">SKILLS</router-link>
-                 <router-link id="link" v-scrollanimation v-ripple to="/aboutMe" @mouseover.native="hover = false" @mouseleave.native="hover = true">ABOUT ME</router-link>
-                <router-link id="link" v-scrollanimation v-ripple to="/home" :class="{active:hover}">HOME</router-link>
-             </v-flex>
-         </v-row>
-         </v-container>
-      </div>
+    <v-main  fluid class="header">
+        <v-row>
+            <v-col lg="8" >
+            </v-col>
+            <v-col lg="4">      
+                <v-row  class="mr-5">
+                    <v-col md="3" class="pl-0 pr-0"  v-for="route in routerList" :key="route.name" >
+                        <router-link id="link" v-scrollanimation v-ripple to="/home" :class="{active:hover}" v-if="route.name == 'HOME'">HOME</router-link>
+                        <router-link id="link" v-scrollanimation v-ripple :to="route.to" @mouseover.native="hover = false" @mouseleave.native="hover = true" v-else>{{route.name}}</router-link>
+                    </v-col >        
+                </v-row>            
+            </v-col>
+        </v-row>
+    </v-main>
 </template>
-
 <script>
 export default {
   name: 'headerComp',
   data(){
       return{
           hover:true,
+          routerList:[
+              {to:"/home",name:"HOME"},
+              {to:"/aboutMe",name:"ABOUT ME"},
+              {to:"/skills",name:"SKILLS"},
+              {to:"/contact",name:"CONTACT"}      
+          ]
       }
   }
 }
@@ -30,28 +33,22 @@ export default {
 </script>
 
 <style scoped>
-#link {
-    margin-top: 10px;
-    width:100px;
-    
-}
-.header img{
-    height:60px;
-    width:80px;
-    border-radius: 50%;
-    box-shadow: 2px 2px #e0dbdb;
-}
 .header{
     background-color:  #ffffff;
     width: 100%;
     position: fixed;
-    z-index:   1;
+    z-index:    1;
     text-align:center;
 }
-#name{
-    color:grey;
-    text-align: right;
-    margin-right: 30%;
+
+#link {
+    width:100%;   
+}
+
+#logo{
+    height: 80px;
+    width:150px;
+    float: left;
 }
 a {
     text-decoration: none;
