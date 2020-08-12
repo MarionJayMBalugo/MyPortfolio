@@ -3,12 +3,14 @@
   <div class="home" id="home">
     <div class="triangle"></div>
     <div id="slogan">   
-        <h1 v-scrollanimation>Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.</h1>
+        <h1 v-scrollanimation>
+          Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.
+        </h1>
         <p v-scrollanimation>
             <vue-typer 
-            :text='["CONNECTS YOU"," AND YOUR BUSINESS","WITH DIGITAL WORLD"]'
-            :repeat='Infinity'
-            :shuffle='false'
+            :text='typerInfo.msg'
+            :repeat='typerInfo.repeat'
+            :shuffle='typerInfo.isShaffle'
             initial-action='typing'
             :pre-type-delay='70'
             :type-delay='70'
@@ -21,8 +23,7 @@
         </p>
       <br>
       <v-btn id="link" color="#939366" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
-      <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn>
-     
+      <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
     </div>
   </div>
     <v-card class="details pl-2 pr-2">
@@ -114,6 +115,15 @@
 <script>
 export default {
   name: 'home',
+  data:()=>{
+    return {
+      typerInfo:{
+        msg:["CONNECTS YOU"," AND YOUR BUSINESS","WITH DIGITAL WORLD"], repeat:'Infinity',
+        isShuffle:false
+      }
+      
+    }
+  },
   mounted(){
     if(this.$route.name == "aboutMe"){
           document.getElementById("about").scrollIntoView();
@@ -142,14 +152,14 @@ export default {
 }
 </script>
 <style scoped>
-  .home{
-    background-image:url("~@/assets/backgroundImage.png");
-    background-repeat: no-repeat;
-    background-size: 70% 500px;
-    background-position: top right;
-   
-  }
-  .triangle{
+.home{
+  background-image:url("~@/assets/backgroundImage.png");
+  background-repeat: no-repeat;
+  background-size: 70% 500px;
+  background-position: top right;
+  height: 500px;
+}
+.triangle{
   margin-left: 30%;
 	width: 0;
 	height: 0;
@@ -160,12 +170,10 @@ export default {
 #slogan{
   margin-top:-20%;
   margin-left: 20%;
-  position:absolute;
-  
 }
 .details{
-  margin-right:20% !important;
-  margin-left:20% !important;
+  margin-right:20% ;
+  margin-left:20%;
 }
 .expQuickView p{
   color:#939366;
