@@ -36,9 +36,10 @@ export default {
 .header{
     background-color:  #ffffff;
     width: 100%;
-    position: fixed;
+    position: sticky;
     z-index:    1;
     text-align:center;
+    top:0;
 }
 
 #link {

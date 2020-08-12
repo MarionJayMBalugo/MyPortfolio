@@ -1,86 +1,73 @@
 <template>
-<v-main style="width:100%;" >
-  <div class="home" id="home">
-    <div class="triangle"></div>
-    <div id="slogan">   
-      <h1 v-scrollanimation>
-        Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.
-      </h1>
-      <p v-scrollanimation>
-          <vue-typer 
-          :text='typerInfo.msg'
-          :repeat='typerInfo.repeat'
-          :shuffle='typerInfo.isShaffle'
-          :initial-action='typerInfo.initialAction'
-          :pre-type-delay='typerInfo.preTypeDelay'
-          :type-delay='typerInfo.typeDelay'
-          :pre-erase-delay='typerInfo.preEraseDelay'
-          :erase-delay='typerInfo.eraseDelay'
-          :erase-style='typerInfo.eraseStyle'
-          :erase-on-complete='typerInfo.eraseOnComplete'
-          :caret-animation='typerInfo.caretAnimation'
-          ></vue-typer>
-      </p>
-      <v-btn id="link" color="#939366" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
-      <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
+  <v-main style="width:100%;">
+    <div class="home" id="home">
+      <div class="triangle"></div>
+      <div id="slogan">   
+        <h1 v-scrollanimation>
+          Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.
+        </h1>
+        <p v-scrollanimation>
+            <vue-typer 
+            :text='typerInfo.msg'
+            :repeat='typerInfo.repeat'
+            :shuffle='typerInfo.isShaffle'
+            :initial-action='typerInfo.initialAction'
+            :pre-type-delay='typerInfo.preTypeDelay'
+            :type-delay='typerInfo.typeDelay'
+            :pre-erase-delay='typerInfo.preEraseDelay'
+            :erase-delay='typerInfo.eraseDelay'
+            :erase-style='typerInfo.eraseStyle'
+            :erase-on-complete='typerInfo.eraseOnComplete'
+            :caret-animation='typerInfo.caretAnimation'
+            ></vue-typer>
+        </p>
+        <v-btn id="link" color="#939366" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
+        <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
+      </div>
     </div>
-  </div>
-
-  <v-card class="details pl-2 pr-2">
-
-    <v-container class="expQuickView" >
-      <v-row>
-        <v-flex lg="3" v-for="expInfo in expList" :key="expInfo.alt">
-          <div v-scrollanimation style="display:flex">
-            <div  id="imgDiv">
-              <img v-scrollanimation :src="getImagePath (expInfo.name)"  :alt="expInfo.alt"> 
-            </div>
-            <div >
-              <span class="pl-3">{{expInfo.num}}</span><br><span class="pl-3" style="color:#939366;font-weight:bold">{{expInfo.description}}</span>
-            </div>
-          </div>       
-        </v-flex>
-      </v-row>
-    </v-container>
-    <hr>
-
-    <v-container id="about" >
-      <v-row align="center">
-        <v-col lg="3" id="dev" class="mt-10">
-          <img v-scrollanimation src="~@/assets/developer.jpg" alt="developer">
-        </v-col>
-        <v-col lg="9">
-          <v-container class="pt-10">
-            <p v-scrollanimation>My Intro</p>
-            <h1 v-scrollanimation>About Me</h1>
-            <br>
-            <div v-scrollanimation>
-              <span >Hi I'm Marion Jay Balugo.I am a web developer.I am a proud graduate of The
-              <br>University of San Carlos and a scholar of the Passerelles Numeriques
-              <br>a very known foundation that produces world-class IT professionals.</span>
-            </div>
-            <div  id="aboutDetails">
-              <v-row >
-                <v-col v-scrollanimation lg="6">
-                    <span id="infoName"   style="color:#939366;">Name:</span>
-                    <br><span class="ml-4">Marion Jay M. Balugo</span><br><br>
-                    <span id="infoName"  style="color:#939366;">Date of Birth:</span>
-                    <br><span class="ml-4">August 13, 2000</span><br>
-                </v-col>
-                <v-col v-scrollanimation lg="6">
-                    <span id="infoName"  style="color:#939366;">Address:</span>
-                    <br><span class="ml-4">Nasipit Road, Talamban, Cebu City</span><br>
-                    <span id="infoName"  style="color:#939366;">Zip Code:</span>
-                    <br><span class="ml-4">6000</span><br>
-                </v-col>
-              </v-row>                          
-            </div>          
-          </v-container>   
-        </v-col>     
-      </v-row>
-    </v-container>
-  </v-card>
-</v-main>
+    <v-card class="details pl-2 pr-2">
+      <v-container class="expQuickView" >
+        <v-row>
+          <v-flex lg="3" v-for="expInfo in expList" :key="expInfo.alt">
+            <div v-scrollanimation style="display:flex">
+              <div  id="imgDiv">
+                <img v-scrollanimation :src="getImagePath (expInfo.name)"  :alt="expInfo.alt"> 
+              </div>
+              <div >
+                <span class="pl-3">{{expInfo.num}}</span><br><span class="pl-3" style="color:#939366;font-weight:bold">{{expInfo.description}}</span>
+              </div>
+            </div>       
+          </v-flex>
+        </v-row>
+      </v-container>
+      <hr>
+      <v-container id="about" >
+        <v-row align="center">
+          <v-col lg="3" id="dev" class="mt-10">
+            <img v-scrollanimation src="~@/assets/developer.jpg" alt="developer">
+          </v-col>
+          <v-col lg="9">
+            <v-container class="pt-10">
+              <p v-scrollanimation>{{aboutMe.subtitle}}</p>
+              <h1 v-scrollanimation>{{aboutMe.title}}</h1>
+              <br>
+              <div v-scrollanimation>
+                <span >{{aboutMe.description}}</span>
+              </div>
+              <div  id="aboutDetails">
+                <v-row v-for="aboutDetail in aboutMe.details.length/2" :key="aboutDetail">     
+                  <v-col v-scrollanimation lg="6" v-for="aboutDetail2 in aboutMe.details.length/2" :key="aboutDetail2">
+                      <span id="infoName" style="color:#939366;">{{aboutMe.details[aboutDetail2-1+(aboutDetail-1)*2].label}}:</span>
+                      <br><span class="ml-4">{{aboutMe.details[(aboutDetail2-1)+(aboutDetail-1)*2].info}}</span><br>                               
+                  </v-col>
+                </v-row>                         
+              </div>          
+            </v-container>   
+          </v-col>     
+        </v-row>
+      </v-container>
+    </v-card>
+  </v-main>
 </template>
 <script>
 export default {
@@ -109,7 +96,20 @@ export default {
         {name:"icons/clientIcon.png",alt:"client icon",num:150,description:"HAPPY CLIENTS"},
         {name:"icons/coffeeIcon.png",alt:"coffee icon",num:487,description:"CUPS OF COFFEE"},
         {name:"icons/calendarIcon.png",alt:"calendar icon",num:10,description:"YEARS EXPERIENCE"},
-      ]
+      ],
+      aboutMe:{
+        title:"About Me",
+        subtitle:"My Intro",
+        description:"Hi I'm Marion Jay Balugo.I am a web developer.I am a proud graduate of The"+
+          "University of San Carlos and a scholar of the Passerelles Numeriques"+
+          "a very known foundation that produces world-class IT professionals.",
+        details:[
+          {label:"Name", info:"Marion Jay Balugo"},
+          {label:"Address", info:"Nasipit Road, Talamban, Cebu City"},
+          {label:"Date of Birth", info:"August 13, 2000"},
+          {label:"Zip Code", info:"6000"},
+        ],
+      }
       
     }
   },
@@ -148,20 +148,22 @@ export default {
 .home{
   background-image:url("~@/assets/backgroundImage.png");
   background-repeat: no-repeat;
-  background-size: 70% 500px;
+  background-size: 70% 470px;
   background-position: top right;
-  height: 500px;
+  height: 470px;
 }
 .triangle{
   margin-left: 30%;
-	width: 0;
+  width: 0;
 	height: 0;
 	border-top: 0px solid transparent;
-	border-left: 150px solid white;
-	border-bottom: 500px solid transparent;
+	border-left: 150px solid white; 
+	border-bottom: 470px solid transparent;
 }
 #slogan{
-  margin-top:-20%;
+  position: absolute;
+  top: 10%;
+  left: 0px;
   margin-left: 20%;
 }
 .details{
@@ -204,19 +206,17 @@ h1{
 #aboutDetails{
   margin-top: 20px;
 }
-
 #infoName{
   font-weight: bold;
 }
-
 hr{
   margin-top:30px;
   color:grey;
 } 
 #link:hover{
-    transform:scale(1.3,1.3);
-    -webkit-transform:scale(1.3,1.3);
-    -moz-transform:scale(1.3,1.3);
+  transform:scale(1.3,1.3);
+  -webkit-transform:scale(1.3,1.3);
+  -moz-transform:scale(1.3,1.3);
 
 } 
 </style>
