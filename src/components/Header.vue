@@ -1,9 +1,9 @@
 <template>
     <v-main  fluid class="header">
         <v-row>
-            <v-col lg="8" >
+            <v-col lg="7" >
             </v-col>
-            <v-col lg="4">      
+            <v-col lg="5">      
                 <v-row  class="mr-5">
                     <v-col md="3" class="pl-0 pr-0"  v-for="route in routerList" :key="route.name" >
                         <router-link id="link" v-scrollanimation v-ripple to="/home" :class="{active:hover}" v-if="route.name == 'HOME'">HOME</router-link>
