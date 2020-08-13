@@ -110,36 +110,33 @@ export default {
           {label:"Zip Code", info:"6000"},
         ],
       }
-      
     }
   },
   mounted(){
-    if(this.$route.name == "aboutMe"){
-          document.getElementById("about").scrollIntoView();
-        }else{     
-          document.getElementById("home").scrollIntoView();
-        }
+  this.scrollIntoDiv(this.$route.name);
   },
   computed: {
-    show() { 
-      return this.$route.name}
+    show(){
+      return this.$store.getters.getRouteName;
+    }
   },
   watch: {
-    show: {
-      handler(value) { 
-        if(value == "aboutMe"){
-
-          document.getElementById("about").scrollIntoView();
-        }else{  
-          document.getElementById("home").scrollIntoView();
-        }
-        
+    show:{
+      handler(value){
+        this.scrollIntoDiv(value);
       }
-    },
+    }
   },
   methods: {
     getImagePath (imageName) {
         return  require(`../assets/${imageName}`) 
+    },
+    scrollIntoDiv( value){
+      if(value == "aboutMe"){
+          document.getElementById("about").scrollIntoView();
+        }else if(value == "home"){ 
+          document.getElementById("home").scrollIntoView();
+        }
     }
   }
 }

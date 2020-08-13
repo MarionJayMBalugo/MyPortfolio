@@ -6,8 +6,16 @@
             <v-col lg="5">      
                 <v-row  class="mr-5">
                     <v-col md="3" class="pl-0 pr-0"  v-for="route in routerList" :key="route.name" >
-                        <router-link id="link" v-scrollanimation v-ripple to="/home" :class="{active:hover}" v-if="route.name == 'HOME'">HOME</router-link>
-                        <router-link id="link" v-scrollanimation v-ripple :to="route.to" @mouseover.native="hover = false" @mouseleave.native="hover = true" v-else>{{route.name}}</router-link>
+                        <router-link id="link"
+                        v-scrollanimation 
+                        v-ripple 
+                        :to="route.to" 
+                        :class="{active:route.isActive}"
+                        @click.native="updateStatus()" 
+                        @mouseover.native="updateOnHoverStatus(false)"
+                        @mouseleave.native="updateOnHoverStatus(true)">
+                        {{route.name}}
+                        </router-link>
                     </v-col >        
                 </v-row>            
             </v-col>
@@ -19,13 +27,57 @@ export default {
   name: 'headerComp',
   data(){
       return{
-          hover:true,
+          activeRouteIndex:0,
           routerList:[
-              {to:"/home",name:"HOME"},
-              {to:"/aboutMe",name:"ABOUT ME"},
-              {to:"/skills",name:"SKILLS"},
-              {to:"/contact",name:"CONTACT"}      
+              {to:"/home",name:"HOME",isActive:true},
+              {to:"/aboutMe",name:"ABOUT ME",isActive:false},
+              {to:"/skills",name:"SKILLS",isActive:false},
+              {to:"/contact",name:"CONTACT",isActive:false}      
           ]
+      }
+  },
+  computed:{
+      route(){
+          return this.$store.getters.getRouteName;
+      }
+  },
+  watch:{
+      route:{
+          handler(){
+              this.updateStatus();
+          }
+      }
+  },
+  methods:{
+      getActiveRoute(){
+          for(var index = 0; index<this.routerList.length;index ++){
+              if(this.routerList[index].isActive){
+                  this.activeRouteIndex = index;
+                  break;
+              }
+          }
+      },
+      updateOnHoverStatus(status){
+          this.getActiveRoute();
+          this.routerList[this.activeRouteIndex].isActive=status;
+      },
+
+      updateStatus(){   
+          var tempList={
+              home:"HOME",
+              aboutMe:"ABOUT ME",
+              skills:"SKILLS",
+              projects:"SKILLS",
+              contact:"CONTACT"
+          }
+          var routeName= this.$route.name;
+         this.routerList.forEach(element => {
+             if(element.name == tempList[routeName]){
+                 element.isActive=true;
+             }else{
+                 element.isActive=false;
+             }
+         });       
       }
   }
 }

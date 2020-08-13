@@ -15,8 +15,18 @@ export default {
     headerComp,
     footerComp
   },
-   
- 
+  computed: {
+    route() { 
+      return this.$route.name
+      },
+  },
+  watch: {
+    route: { 
+      handler(value) {  
+        this.$store.commit('updateRoute',value);    
+      }
+    },
+  }
 }
 </script>
 
