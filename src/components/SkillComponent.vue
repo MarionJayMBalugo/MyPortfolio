@@ -47,79 +47,78 @@
 <script>
 
 export default {
-  name: 'skill',
-  data:()=>{
-      return{
-            projectInfo:{
-                title:"PROJECTS",
-                description:[
-                    "throughout my college days.I was able to work on various projects",
-                    "with different clients",
-                    "here are some of the most notable:"
+    name: 'skill',
+    data:()=>{
+        return{
+                projectInfo:{
+                    title:"PROJECTS",
+                    description:[
+                        "throughout my college days.I was able to work on various projects",
+                        "with different clients",
+                        "here are some of the most notable:"
+                        ],
+                    projectList:[
+                        {name:"projectsImages/project1.jpg", alt:"project1",description:"description for first project"},
+                        {name:"projectsImages/project2.png", alt:"project2",description:"description for second project"},
+                        {name:"projectsImages/project3.jpg", alt:"project3",description:"description for third project"},
+                        {name:"projectsImages/project4.png", alt:"project4",description:"description for fourth project"},
+                        {name:"projectsImages/project5.jpg", alt:"project5",description:"description for fifth project"},
+                        {name:"projectsImages/project6.jpg", alt:"project6",description:"description for sixth project"},
                     ],
-                projectList:[
-                    {name:"projectsImages/project1.jpg", alt:"project1",description:"description for first project"},
-                    {name:"projectsImages/project2.png", alt:"project2",description:"description for second project"},
-                    {name:"projectsImages/project3.jpg", alt:"project3",description:"description for third project"},
-                    {name:"projectsImages/project4.png", alt:"project4",description:"description for fourth project"},
-                    {name:"projectsImages/project5.jpg", alt:"project5",description:"description for fifth project"},
-                    {name:"projectsImages/project6.jpg", alt:"project6",description:"description for sixth project"},
-                ],
-            },
-            
-            skillsInfo:{
-                title:"SKILLS",
-                description:[
-                    "throughout my college days.I am able to utilize",
-                    " vastarray of web development technologies",
-                    "which includes:"
-                ],
-                skillsList:[
-                    {name:"skillLogo/laravel.png"},
-                    {name:"skillLogo/mariadb.png"},
-                    {name:"skillLogo/mongodb.png"},
-                    {name:"skillLogo/mssql.png"},
-                    {name:"skillLogo/node.png"},
-                    {name:"skillLogo/php.png"},
-                    {name:"skillLogo/react.png"},
-                    {name:"skillLogo/vue.png"},
-                    {name:"skillLogo/angular.png"},
-                    {name:"skillLogo/css3.png"},
-                    {name:"skillLogo/html5.png"},
-                    {name:"skillLogo/js.png"},
-                ]
-            }
-            
-      }
-  },
-    mounted(){
-        if(this.$route.name == "projects"){
-            document.getElementById("projects").scrollIntoView();
-            }else{     
-          document.getElementById("skills").scrollIntoView();
+                },
+                
+                skillsInfo:{
+                    title:"SKILLS",
+                    description:[
+                        "throughout my college days.I am able to utilize",
+                        " vastarray of web development technologies",
+                        "which includes:"
+                    ],
+                    skillsList:[
+                        {name:"skillLogo/laravel.png"},
+                        {name:"skillLogo/mariadb.png"},
+                        {name:"skillLogo/mongodb.png"},
+                        {name:"skillLogo/mssql.png"},
+                        {name:"skillLogo/node.png"},
+                        {name:"skillLogo/php.png"},
+                        {name:"skillLogo/react.png"},
+                        {name:"skillLogo/vue.png"},
+                        {name:"skillLogo/angular.png"},
+                        {name:"skillLogo/css3.png"},
+                        {name:"skillLogo/html5.png"},
+                        {name:"skillLogo/js.png"},
+                    ]
+                }
+                
         }
     },
+    mounted(){
+        this.scrollIntoDiv(this.$route.name);
+    },
     computed: {
-        show() { 
-        return this.$route.name;
+        show(){
+            return this.$store.getters.getRouteName;
         }
     },
     watch: {
-        show: {
-            handler(value) { 
-                if(value == "projects"){
-                document.getElementById("projects").scrollIntoView();
-                } else{     
-                document.getElementById("skills").scrollIntoView();
-            }  
+        show:{
+            handler(value){
+                this.scrollIntoDiv(value);
             }
-        },
+        }
     },
     methods: {
-    getImagePath (imageName) {
-        return  require(`../assets/${imageName}`) 
-    }
-}  
+        getImagePath (imageName) {
+            return  require(`../assets/${imageName}`) 
+        },
+        scrollIntoDiv( value){
+        if(value == "projects"){
+            document.getElementById("projects").scrollIntoView();
+            }else if(value == "skills"){ 
+            document.getElementById("skills").scrollIntoView();
+            }
+        }
+    }  
 }
 </script>
 <style scoped>

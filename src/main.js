@@ -6,7 +6,7 @@ import router from "./router";
 import VueTyperPlugin from 'vue-typer';
 import ScrollAnimation from './scrollAnimation';
 import ReadMore from 'vue-read-more';
-
+import store from './store'
 Vue.directive('scrollanimation',ScrollAnimation);
 Vue.use(VueTyperPlugin);
 Vue.use(Vuetify);
@@ -16,6 +16,6 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   router,
-  
+  store,
   vuetify : new Vuetify(),
 }).$mount('#app')
