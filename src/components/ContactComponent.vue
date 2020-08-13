@@ -1,8 +1,7 @@
 <template>
      <v-main style="width:100%;">
         <div class="details">
-            <v-card class="pa-2 pb-20">
-                
+            <v-card class="pa-2 pb-20">           
               <h1 v-scrollanimation>Get in Touch</h1>
               <p v-scrollanimation>Communication is the key.lol.hahaha</p>
               <v-container>

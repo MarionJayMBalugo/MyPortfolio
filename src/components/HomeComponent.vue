@@ -113,7 +113,7 @@ export default {
     }
   },
   mounted(){
-  this.scrollIntoDiv(this.$route.name);
+    this.scrollIntoDiv(this.$route.name);
   },
   computed: {
     show(){
@@ -129,14 +129,14 @@ export default {
   },
   methods: {
     getImagePath (imageName) {
-        return  require(`../assets/${imageName}`) 
+      return require(`../assets/${imageName}`);
     },
     scrollIntoDiv( value){
       if(value == "aboutMe"){
           document.getElementById("about").scrollIntoView();
-        }else if(value == "home"){ 
-          document.getElementById("home").scrollIntoView();
-        }
+      }else if(value == "home"){ 
+        document.getElementById("home").scrollIntoView();
+      }
     }
   }
 }
@@ -174,7 +174,7 @@ export default {
   font-weight: bold;
 }
 .expQuickView img{
-   height: 50px;
+  height: 50px;
   width:50px;
 }
 .expQuickView span{
@@ -184,14 +184,12 @@ export default {
 h1{
   font-weight: bolder;
  }
-
  #imgDiv{
   height: 50px;
   width:50px;
- border: 2px solid #939366;
- border-radius: 50%;
- overflow: hidden; 
- 
+  border: 2px solid #939366;
+  border-radius: 50%;
+  overflow: hidden; 
 } 
 #about p{
   color:#939366;

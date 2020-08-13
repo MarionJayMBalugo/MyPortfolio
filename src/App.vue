@@ -18,7 +18,7 @@ export default {
   computed: {
     route() { 
       return this.$route.name
-      },
+    },
   },
   watch: {
     route: { 
@@ -31,9 +31,7 @@ export default {
 </script>
 
 <style>
-
-  .details{
-
+.details{
   margin-right:20% !important;
   margin-left:20% !important;
   padding-bottom:100px;
@@ -42,25 +40,28 @@ export default {
 #footer{
     margin-right:19.5% !important;
     margin-left:19.5% !important;
-    /* position: fixed;
-    bottom: 0; */
 }
+
 .before-enter{
   opacity: 0;
   transform: translateY(100px);
   transition: all 2s ease-out;
 }
+
 .enter{
   opacity: 1;
   transform: translateY(0px);
 }
+
 img.before-enter{
   opacity: 0;
   transform:scale(.5) rotate(-25deg);
   transition: all 2s ease-out;
 }
+
 img.enter{
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 </style>
