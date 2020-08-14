@@ -67,9 +67,6 @@ export default {
 }
 </script>
 <style>
-   .details{
-       margin-top: 100px;
-   }
    #mediaPlatforms img{
        width:100%;
        height:100%;

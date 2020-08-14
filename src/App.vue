@@ -33,10 +33,9 @@ export default {
 <style>
 
   .details{
-
   margin-right:20% !important;
   margin-left:20% !important;
-  padding-bottom:100px;
+ 
 }
 
 #footer{
