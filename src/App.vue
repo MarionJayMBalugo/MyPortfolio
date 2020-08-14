@@ -31,10 +31,15 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
 .details{
+=======
+
+  .details{
+>>>>>>> feature/enhancement
   margin-right:20% !important;
   margin-left:20% !important;
-  padding-bottom:100px;
+ 
 }
 
 #footer{

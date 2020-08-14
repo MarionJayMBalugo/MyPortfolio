@@ -18,14 +18,14 @@
             :erase-delay='typerInfo.eraseDelay'
             :erase-style='typerInfo.eraseStyle'
             :erase-on-complete='typerInfo.eraseOnComplete'
-            :caret-animation='typerInfo.caretAnimation'
+            :caret-animation='typerInfo.caretAnimation'  
             ></vue-typer>
         </p>
         <v-btn id="link" color="#939366" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
         <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
       </div>
     </div>
-    <v-card class="details pl-2 pr-2">
+    <v-card class="details pl-2 pr-2" >
       <v-container class="expQuickView" >
         <v-row>
           <v-flex lg="3" v-for="expInfo in expList" :key="expInfo.alt">
@@ -41,13 +41,13 @@
         </v-row>
       </v-container>
       <hr>
-      <v-container id="about" >
-        <v-row align="center">
-          <v-col lg="3" id="dev" class="mt-10">
+      <v-container id="about"  >
+        <v-row align="center"  >
+          <v-col lg="3" style="margin-top:-70px">
             <img v-scrollanimation src="~@/assets/developer.jpg" alt="developer">
           </v-col>
-          <v-col lg="9">
-            <v-container class="pt-10">
+          <v-col lg="9" >
+            <v-container >
               <p v-scrollanimation>{{aboutMe.subtitle}}</p>
               <h1 v-scrollanimation>{{aboutMe.title}}</h1>
               <br>
@@ -89,7 +89,8 @@ export default {
         eraseDelay:250,
         eraseStyle:'clear',
         eraseOnComplete:false,
-        caretAnimation:'expand'
+        caretAnimation:'expand',
+    
       },
       expList:[
         {name:"icons/projectIcon.png",alt:"project icon",num:100,description:"PROJECTS COMPLETED"},
@@ -163,8 +164,11 @@ export default {
   left: 0px;
   margin-left: 20%;
 }
+.vue-typer {
+  font-family: monospace;
+}
+
 .details{
-  margin-top: 20px;
   margin-right:20% ;
   margin-left:20%;
 }
@@ -176,6 +180,7 @@ export default {
 .expQuickView img{
   height: 50px;
   width:50px;
+  filter: grayscale(100%);
 }
 .expQuickView span{
   color:grey;
@@ -187,9 +192,16 @@ h1{
  #imgDiv{
   height: 50px;
   width:50px;
+<<<<<<< HEAD
   border: 2px solid #939366;
   border-radius: 50%;
   overflow: hidden; 
+=======
+  border: 2px solid grey;
+  border-radius: 50%;
+  overflow: hidden; 
+ 
+>>>>>>> feature/enhancement
 } 
 #about p{
   color:#939366;
@@ -198,14 +210,11 @@ h1{
 #about span{
   color:grey;
 }
-#aboutDetails{
-  margin-top: 20px;
-}
+
 #infoName{
   font-weight: bold;
 }
 hr{
-  margin-top:30px;
   color:grey;
 } 
 #link:hover{
