@@ -1,30 +1,82 @@
 <template>
   <v-main style="width:100%;">
-    <div class="home" id="home">
-      <div class="triangle"></div>
-      <div id="slogan">   
-        <h1 v-scrollanimation>
-          Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.
-        </h1>
-        <p v-scrollanimation>
-            <vue-typer 
-            :text='typerInfo.msg'
-            :repeat='typerInfo.repeat'
-            :shuffle='typerInfo.isShaffle'
-            :initial-action='typerInfo.initialAction'
-            :pre-type-delay='typerInfo.preTypeDelay'
-            :type-delay='typerInfo.typeDelay'
-            :pre-erase-delay='typerInfo.preEraseDelay'
-            :erase-delay='typerInfo.eraseDelay'
-            :erase-style='typerInfo.eraseStyle'
-            :erase-on-complete='typerInfo.eraseOnComplete'
-            :caret-animation='typerInfo.caretAnimation'  
-            ></vue-typer>
-        </p>
-        <v-btn id="link" color="#939366" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
-        <v-btn id="link" outlined color="#939366" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
-      </div>
-    </div>
+    <v-main class="home" id="home" >
+          <v-row align="center">
+            <v-col md="6">
+              <div style="float:right" class="pr-13">   
+                <h1 v-scrollanimation>
+                  Hi, I am <span style="color:#939366;">Marion</span> This is<br> my favorite work.
+                </h1>
+                <p v-scrollanimation>
+                    <vue-typer 
+                    :text='typerInfo.msg'
+                    :repeat='typerInfo.repeat'
+                    :shuffle='typerInfo.isShaffle'
+                    :initial-action='typerInfo.initialAction'
+                    :pre-type-delay='typerInfo.preTypeDelay'
+                    :type-delay='typerInfo.typeDelay'
+                    :pre-erase-delay='typerInfo.preEraseDelay'
+                    :erase-delay='typerInfo.eraseDelay'
+                    :erase-style='typerInfo.eraseStyle'
+                    :erase-on-complete='typerInfo.eraseOnComplete'
+                    :caret-animation='typerInfo.caretAnimation'  
+                    ></vue-typer>
+                </p>
+                <v-btn id="link" color="#939366" style="color:white" class="mr-5" @click="$router.push({name: 'contact'})" v-scrollanimation >hire me</v-btn>
+                <v-btn id="link" outlined color="black" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
+              </div>
+            </v-col>
+            <v-col md="3">
+              <v-card  style="width:300px;" >
+                <v-carousel
+                cycle
+                height="400"
+                hide-delimiter-background
+                show-arrows-on-hover>
+                <v-carousel-item
+                  v-for="(slide, i) in slides"
+                  :key="i">
+                <v-sheet
+                  height="100%">
+                  <v-row
+                  class="fill-height"
+                  align="center"
+                  justify="center">
+                  <img :src="getImagePath (currentBgPath)" alt="">
+                  <!-- <div class="display-3">{{ slide }} Slide</div> -->
+                  </v-row>
+                </v-sheet>
+                </v-carousel-item>
+                </v-carousel>
+              </v-card>
+            </v-col>
+            <v-col md="3">
+              <v-card  style="width:300px;">
+                <v-carousel
+                cycle
+                height="400"
+                hide-delimiter-background
+                show-arrows-on-hover>
+                <v-carousel-item
+                  v-for="(slide, i) in slides"
+                  :key="i">
+                <v-sheet
+                  height="100%">
+                  <v-row
+                  class="fill-height"
+                  align="center"
+                  justify="center">
+                   <img :src="getImagePath (colors[i])" alt="">
+                  </v-row>
+                </v-sheet>
+                </v-carousel-item>
+                </v-carousel>
+              </v-card>
+            </v-col>     
+          </v-row>
+          
+    </v-main>
+
     <v-card class="details pl-2 pr-2" >
       <v-container class="expQuickView" >
         <v-row>
@@ -74,6 +126,21 @@ export default {
   name: 'home',
   data:()=>{
     return {
+      currentBgPath: null,
+      colors: [
+          "carouselImages/img1.png",
+          "carouselImages/img2.png",
+          "carouselImages/img3.png",
+          "carouselImages/img4.png",
+          "carouselImages/img5.png",
+        ],
+        slides: [
+          'First',
+          'Second',
+          'Third',
+          'Fourth',
+          'Fifth',
+        ],
       typerInfo:{
         msg:[
           "CONNECTS YOU",
@@ -113,6 +180,10 @@ export default {
       }
     }
   },
+  created(){
+        var random = Math.floor(Math.random() * this.colors.length);
+        this.currentBgPath = this.colors[random];
+    },
   mounted(){
   this.scrollIntoDiv(this.$route.name);
   },
@@ -144,25 +215,10 @@ export default {
 </script>
 <style scoped>
 .home{
-  background-image:url("~@/assets/backgroundImage.png");
+  background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url("~@/assets/backgroundImage.png");
   background-repeat: no-repeat;
   background-size: 70% 470px;
   background-position: top right;
-  height: 470px;
-}
-.triangle{
-  margin-left: 30%;
-  width: 0;
-	height: 0;
-	border-top: 0px solid transparent;
-	border-left: 150px solid white; 
-	border-bottom: 470px solid transparent;
-}
-#slogan{
-  position: absolute;
-  top: 10%;
-  left: 0px;
-  margin-left: 20%;
 }
 .vue-typer {
   font-family: monospace;
