@@ -26,15 +26,15 @@
                 <v-btn id="link" outlined color="black" @click="$router.push({name: 'projects'})" v-scrollanimation>projects</v-btn> 
               </div>
             </v-col>
-            <v-col md="3">
-              <v-card  style="width:300px;" >
+            <v-col md="3" class="pl-10">
+              <v-card id="carousel" v-scrollanimation>
                 <v-carousel
                 cycle
                 height="400"
                 hide-delimiter-background
                 show-arrows-on-hover>
                 <v-carousel-item
-                  v-for="(slide, i) in slides"
+                  v-for=" i in slides.length-2"
                   :key="i">
                 <v-sheet
                   height="100%">
@@ -42,16 +42,21 @@
                   class="fill-height"
                   align="center"
                   justify="center">
-                  <img :src="getImagePath (currentBgPath)" alt="">
-                  <!-- <div class="display-3">{{ slide }} Slide</div> -->
+                  
+                  <div>
+               
+                    <img :src="getImagePath (colors[i+1])" alt="">
+                   
+                  </div>
+                  
                   </v-row>
                 </v-sheet>
                 </v-carousel-item>
                 </v-carousel>
               </v-card>
             </v-col>
-            <v-col md="3">
-              <v-card  style="width:300px;">
+            <v-col md="3" >
+              <v-card id="carousel" v-scrollanimation>
                 <v-carousel
                 cycle
                 height="400"
@@ -73,10 +78,8 @@
                 </v-carousel>
               </v-card>
             </v-col>     
-          </v-row>
-          
+          </v-row>      
     </v-main>
-
     <v-card class="details pl-2 pr-2" >
       <v-container class="expQuickView" >
         <v-row>
@@ -95,7 +98,7 @@
       <hr>
       <v-container id="about"  >
         <v-row align="center"  >
-          <v-col lg="3" style="margin-top:-70px">
+          <v-col lg="3">
             <img v-scrollanimation src="~@/assets/developer.jpg" alt="developer">
           </v-col>
           <v-col lg="9" >
@@ -126,12 +129,11 @@ export default {
   name: 'home',
   data:()=>{
     return {
-      currentBgPath: null,
-      colors: [
-          "carouselImages/img1.png",
+      colors: [ 
           "carouselImages/img2.png",
-          "carouselImages/img3.png",
           "carouselImages/img4.png",
+          "carouselImages/img3.png",
+          "carouselImages/img1.png",
           "carouselImages/img5.png",
         ],
         slides: [
@@ -180,10 +182,6 @@ export default {
       }
     }
   },
-  created(){
-        var random = Math.floor(Math.random() * this.colors.length);
-        this.currentBgPath = this.colors[random];
-    },
   mounted(){
     this.scrollIntoDiv(this.$route.name);
   },
@@ -248,16 +246,10 @@ h1{
  #imgDiv{
   height: 50px;
   width:50px;
-<<<<<<< HEAD
-  border: 2px solid #939366;
-  border-radius: 50%;
-  overflow: hidden; 
-=======
   border: 2px solid grey;
   border-radius: 50%;
   overflow: hidden; 
  
->>>>>>> feature/enhancement
 } 
 #about p{
   color:#939366;
@@ -279,4 +271,7 @@ hr{
   -moz-transform:scale(1.3,1.3);
 
 } 
+#carousel{
+  width:280px;
+}
 </style>
